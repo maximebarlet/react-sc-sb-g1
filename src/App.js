@@ -1,5 +1,6 @@
 import React, {useState} from "react";
-import Badge, { colors } from "./ui/atoms/Badge";
+import StreamerName from "./ui/molecules/StreamerName";
+import Icon from "./ui/atoms/Icon";
 
 
 export default function App() {
@@ -8,11 +9,12 @@ export default function App() {
 
   return (
     <div className="App">
-			<div className="container">
-				<Badge text="Ponce" color={colors.purple}/>
-				
-			</div>
-     	{/* <Badge text="Designer" color={colors.grey}/> */}
+      <StreamerName
+        text="Ponce"
+        type="primary"
+        iconRight="certification"
+      ></StreamerName>
+      <Icon color="#9146FF"></Icon>
     </div>
 	);
 }
