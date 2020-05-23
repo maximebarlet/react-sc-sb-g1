@@ -14,3 +14,6 @@
 <code>npm run storybook</code>
 
 <h2>Design</h2>
+
+![Design System](https://github.com/maximebarlet/react-sc-sb-g1/blob/master/design/Design%20System.jpg)
+
