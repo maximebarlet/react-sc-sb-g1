@@ -3,6 +3,7 @@ import styled, { css } from "styled-components";
 import PropTypes from "prop-types";
 import Colors from "../particles/Colors";
 import Icon from "../atoms/Icon";
+import '../../assets/fonts/font.css';
 
 export const type = {
   noCertified: "noCertified",
