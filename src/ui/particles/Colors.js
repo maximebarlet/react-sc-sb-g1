@@ -1,7 +1,8 @@
 const Colors = {
-    white: "#FFFFFF",
-    brand_purple: "#9146FF",
-    neutral_black: "#000000",
+    brand_primary: "#9146FF",
+    brand_light: "#AF85CD",
+    neutral_grey: "#9F9F9F",
+    darker_grey: "rgba(0, 0, 0, 0.5)"
 };
 
 export default Colors;

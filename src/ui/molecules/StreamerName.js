@@ -1,73 +1,39 @@
-import React, {useState} from "react";
+import React from "react";
 import styled, { css } from "styled-components";
 import PropTypes from "prop-types";
-import Colors from "../particles/Colors";
-import Icon from "../atoms/Icon";
-import '../../assets/fonts/font.css';
+import Certified from "../../assets/img/certifiedIcon.png";
 
-export const type = {
-  noCertified: "noCertified",
-  Certified: "Certified"
-};
 
-export const icons = {
-  default: "",
-  certification: "certification"
-};
-
-export const colors = {
-  brand_purple: Colors.brand_purple,
-  neutral_black: Colors.neutral_black,
-  white: Colors.white,
-};
-
-const StreamerNameWrapper = styled.p`
+const StreamerNameWrapper = styled.h1`
     font-family: Roobert TRIAL;
-    font-style: normal;
     font-weight: bold;
+    color: #FFFFFF;
     font-size: 16px;
-    background-color: ${Colors.neutral_black};
-    color: ${ Colors.white };
-    display: flex;
-`
+    cursor: pointer;
+    padding: 5px 5px 0px 0px;
+`;
 
-const StreamerName = (props) => {
-  const {
-    text,
-    type,
-    iconRight,
-  } = props;
+const CertifiedIcon= styled.img`
+    padding-left: 10px;
+`;
 
-  return (
-    <StreamerNameWrapper
-      type={type}
-    >
-      {text && <p>{text}</p>}
-      {iconRight && (
-        <Icon
-          icon={iconRight}
-          big={!text}
-          color={
-            props.color === Colors.white || props.color === Colors.light_green
-              ? Colors.black
-              : Colors.white
-          }
-        ></Icon>
-      )}
-    </StreamerNameWrapper>
-  );
+const StreamerName = props => {
+    const { text, certified } = props;
+    return <StreamerNameWrapper certified={certified}>{text} 
+        {
+            (certified) ? <CertifiedIcon src={Certified} /> : ''
+        }
+    </StreamerNameWrapper>;
 };
 
 StreamerName.propTypes = {
-  type: PropTypes.string,
-  text: PropTypes.string,
-  iconRight: PropTypes.string,
+    text: PropTypes.string,
+    certified: PropTypes.bool,
 };
 
 StreamerName.defaultProps = {
-  type: type.primary,
-  text: "",
-  iconRight: "",
+    text: '',
+    certified: false,
 };
 
 export default StreamerName;
